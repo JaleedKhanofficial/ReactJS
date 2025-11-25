@@ -3,7 +3,7 @@ import http from "../../../http"
 import { useNavigate } from "react-router-dom";
 
 export default function Create() {
-    const vavigate = useNavigate();
+    const navigate = useNavigate();
     const [inputs, setInputs] = useState({});
     
     const handleChange = (event) =>{
@@ -14,7 +14,7 @@ export default function Create() {
 
     const submitForm = () =>{
         http.post('/users',inputs).then((res)=>{
-             vavigate('/');
+             navigate('/');
         })
     }
 
