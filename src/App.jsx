@@ -5,6 +5,7 @@ import {Routes,Route,Link} from "react-router-dom";
 import Home from './assets/pages/Home';
 import Create from './assets/pages/Create';
 import Edit from './assets/pages/Edit';
+import View from './assets/pages/View';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/create' element={<Create />} />
           <Route path='/edit/:id' element={<Edit />} />
+          <Route path='/view/:id' element={<View />} />
         </Routes>
 
       </div>

@@ -15,6 +15,12 @@ export default function Home(){
         })
     }
 
+    const deleteUser =(id) =>{
+        http.delete('/users/'+id).then(res =>{
+            fetchAllUsers();
+        })
+    }
+
 
     return(
         <div>
@@ -37,7 +43,9 @@ export default function Home(){
                         <td>{user.created_at}</td>
                         <td>{user.email}</td>
                         <td>
-                            <Link className="btn btn-info" to={{pathname:'/edit/'+user.id}}>Edit</Link>
+                            <Link className="btn btn-info" to={{pathname:'/edit/'+user.id}}>Edit</Link>&nbsp;
+                            <Link className="btn btn-primary" to={{pathname:'/view/'+user.id}}>View</Link>&nbsp;
+                            <Link className="btn btn-danger" onClick={()=>{deleteUser(user.id)}}>Delete</Link>
                         </td>
                     </tr>
                     ))}
